@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "@fortawesome/fontawesome-free/js/all";
 import "bulma/css/bulma.css";
 import "./App.css";
@@ -9,13 +9,27 @@ import { getBooks } from "./api/apiProvider";
 
 function App() {
     const cart = [];
-    const books = getBooks();
-    const isFetching = false;
-    const hasError = false;
+    const [isFetching, setIsFetching] = useState(true);
+    const [hasError, setHasError] = useState(false);
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        getBooks()
+          .then(
+            (result) => {
+                setIsFetching(false);
+                setBooks(result);
+            },
+            (error) => {
+                setIsFetching(false);
+                setHasError(error);
+            }
+          )
+      }, [])
 
     const handleAddBookToCart = book => {};
     return (
-        <Layout aside={<Cart />}>
+        <Layout aside={<Cart  items={books} />}>
             <div className="tile is-parent">
                 <div className="tile is-child box">
                     <p className="title">Available books</p>

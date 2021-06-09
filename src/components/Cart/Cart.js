@@ -2,14 +2,14 @@ import React from "react";
 import { EmptyCart } from "./EmptyCart";
 import { CartItemsList } from "./CartItemsList";
 import { priceFormatter } from "../../helpers";
-import { getBooks } from "../../api/apiProvider";
+import { BookListType } from "../../types";
 
 const calculateDiscount = items => {
     return 0;
 };
 
-export const Cart = () => {
-    const fakeData = getBooks();
+export const Cart = ({ items }) => {
+    const fakeData = items;
     const subTotal = fakeData
         .reduce((sum, item) => sum + item.price, 0)
         .toFixed(2);
@@ -46,4 +46,8 @@ export const Cart = () => {
             </div>
         </div>
     );
+};
+
+Cart.propTypes = {
+    items: BookListType.isRequired,
 };

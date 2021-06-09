@@ -51,4 +51,11 @@ const fakeData = [
   }
 ];
 
-export const getBooks = () => fakeData;
+const sleep = async (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+export const getBooks = async () => {
+  await sleep(1000);
+  return fakeData;
+};
