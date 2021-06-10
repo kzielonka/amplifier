@@ -48,4 +48,4 @@ Arguments:
 ### Technical summary
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - This project includes [bulma](https://bulma.io) CSS framework.
-- Recommended Node version 11.10.1 or higher
+- Recommended Node version 12.14.1
