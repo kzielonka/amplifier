@@ -17,8 +17,8 @@
     "redux": "^4.0.5"
   },
   "scripts": {
-    "start": "docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true sample:dev",
-    "build": "docker build -t sample:dev .",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
