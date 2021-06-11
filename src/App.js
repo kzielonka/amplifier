@@ -5,8 +5,8 @@ import "./App.css";
 import { Cart } from "./components/Cart";
 import { Layout } from "./components/Layout";
 import { BookList } from "./components/BookList";
-// import { getBooks } from "./api/amplifyApiProvider";
-import { getBooks } from "./api/fakeApiProvider";
+import { getBooks } from "./api/amplifyApiProvider";
+// import { getBooks } from "./api/fakeApiProvider";
 
 function App() {
     const cart = [];
